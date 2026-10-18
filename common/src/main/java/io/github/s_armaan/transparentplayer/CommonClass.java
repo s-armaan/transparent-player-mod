@@ -10,7 +10,7 @@ public class CommonClass {
     /** Called by each loader's entry point once the loader is ready. */
     public static void init() {
         Constants.LOG.info("Initialising {} on {}", Constants.MOD_NAME, Services.PLATFORM.getPlatformName());
-        TransparentPlayerConfig.load();
+        TransparentPlayerConfig.load(Services.PLATFORM.getConfigDir());
     }
 
     /** Called by each loader at the end of every client tick. */

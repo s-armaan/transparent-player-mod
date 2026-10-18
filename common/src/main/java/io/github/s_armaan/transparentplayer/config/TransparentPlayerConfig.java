@@ -3,7 +3,6 @@ package io.github.s_armaan.transparentplayer.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.github.s_armaan.transparentplayer.Constants;
-import io.github.s_armaan.transparentplayer.platform.Services;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -21,6 +20,7 @@ public class TransparentPlayerConfig {
     private static final String FILE_NAME = Constants.MOD_ID + ".json";
 
     private static TransparentPlayerConfig instance = new TransparentPlayerConfig();
+    private static Path path;
 
     /** Master switch, also flipped by the toggle keybind. */
     public boolean enabled = true;
@@ -38,8 +38,9 @@ public class TransparentPlayerConfig {
         return Math.max(0.0F, Math.min(1.0F, opacity));
     }
 
-    public static void load() {
-        Path path = Services.PLATFORM.getConfigDir().resolve(FILE_NAME);
+    /** Reads the config from {@code configDir} (creating it with defaults if needed) and remembers it for {@link #save()}. */
+    public static void load(Path configDir) {
+        path = configDir.resolve(FILE_NAME);
         if (Files.exists(path)) {
             try (Reader reader = Files.newBufferedReader(path)) {
                 TransparentPlayerConfig loaded = GSON.fromJson(reader, TransparentPlayerConfig.class);
@@ -55,7 +56,9 @@ public class TransparentPlayerConfig {
     }
 
     public static void save() {
-        Path path = Services.PLATFORM.getConfigDir().resolve(FILE_NAME);
+        if (path == null) {
+            return;
+        }
         try {
             Files.createDirectories(path.getParent());
             try (Writer writer = Files.newBufferedWriter(path)) {
