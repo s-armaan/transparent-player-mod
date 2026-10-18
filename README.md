@@ -28,6 +28,7 @@ code (config model, opacity logic) is kept identical between them so fixes can b
 
 - Only the player body is made translucent. Armor, held items, the cape and other render layers are still opaque.
 - The first-person arm is not affected.
+- The ground shadow under the player is not faded.
 
 ## Building (`main`)
 
@@ -39,6 +40,9 @@ Requires JDK 25.
 
 Jars are written to `fabric/build/libs` and `neoforge/build/libs`. Use `./gradlew :fabric:runClient` or
 `./gradlew :neoforge:runClient` to start a development client.
+
+`./gradlew :fabric:runClientGameTest` creates a world and saves screenshots of the player with the effect off and on
+to `fabric/build/run/clientGameTest/screenshots`.
 
 ## Layout (`main`)
 

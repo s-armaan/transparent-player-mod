@@ -47,3 +47,15 @@ sourceSets.configureEach {
         }
     }
 }
+
+// Client game test: ./gradlew :fabric:runClientGameTest launches a world and takes screenshots of the player.
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = "${mod_id}-test"
+        enableGameTests = false
+        enableClientGameTests = true
+        eula = true
+        clearRunDirectory = true
+    }
+}

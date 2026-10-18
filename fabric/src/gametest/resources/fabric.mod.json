@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 1,
+    "id": "transparentplayer-test",
+    "version": "1.0.0",
+    "name": "Transparent Player Test",
+    "environment": "client",
+    "entrypoints": {
+        "fabric-client-gametest": [
+            "io.github.s_armaan.transparentplayer.gametest.TransparentPlayerClientGameTest"
+        ]
+    },
+    "depends": {
+        "transparentplayer": "*"
+    }
+}
