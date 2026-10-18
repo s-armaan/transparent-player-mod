@@ -7,7 +7,7 @@ keybind to toggle it.
 
 | Branch | Minecraft | Loaders | Java |
 |---|---|---|---|
-| `main` | 26.2+ (built against 26.2, smoke-test 26.3) | Fabric, NeoForge | 25 |
+| `main` | 26.2 and 26.3 (same source compiles on both) | Fabric, NeoForge | 25 |
 | `1.20.1` | 1.20.1 | Forge | 17 |
 
 The two lines use different toolchains and renderer internals, so they are kept on separate branches. Loader-neutral
@@ -32,7 +32,7 @@ code (config model, opacity logic) is kept identical between them so fixes can b
 
 ## Building (`main`)
 
-Requires JDK 25.
+Requires JDK 25. Builds against 26.2 by default; see the comment in `gradle.properties` for the 26.3 values.
 
 ```
 ./gradlew build

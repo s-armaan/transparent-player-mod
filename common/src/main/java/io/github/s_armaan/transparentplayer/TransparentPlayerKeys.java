@@ -15,7 +15,7 @@ public class TransparentPlayerKeys {
      * calls this with the category it registered.
      */
     public static KeyMapping createToggle(KeyMapping.Category category) {
-        toggle = new KeyMapping("key." + Constants.MOD_ID + ".toggle", InputConstants.Type.KEYSYM, InputConstants.KEY_J, category);
+        toggle = new KeyMapping("key." + Constants.MOD_ID + ".toggle", InputConstants.KEY_J, category);
         return toggle;
     }
 }
