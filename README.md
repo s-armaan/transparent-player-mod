@@ -1,9 +1,11 @@
-# Transparent Player
+# Transparent Player (Minecraft 26.3, Fabric + NeoForge)
 
 A client-side Minecraft mod that renders your own player model translucent, with a configurable opacity and a
 keybind to toggle it.
 
 ## Branches
+
+This is the **26.3** branch.
 
 | Branch | Minecraft | Loaders | Java |
 |---|---|---|---|

@@ -7,14 +7,12 @@ import io.github.s_armaan.transparentplayer.ItemFade;
 import io.github.s_armaan.transparentplayer.PlayerOpacity;
 import net.minecraft.client.renderer.SubmitNodeCollection;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
-import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.resources.model.geometry.ItemQuads;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.util.ARGB;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-import java.util.List;
 
 @Mixin(SubmitNodeCollection.class)
 public class MixinSubmitNodeCollection {
@@ -33,7 +31,7 @@ public class MixinSubmitNodeCollection {
     // Items (held, worn on the head) arrive as baked quads rather than models, with their render type and tint baked
     // in, so they are rewritten before being submitted.
     @WrapMethod(method = "submitItem")
-    private void transparentplayer$fadeItem(PoseStack poseStack, ItemDisplayContext displayContext, int lightCoords, int overlayCoords, int outlineColor, int[] tintLayers, List<BakedQuad> quads, ItemStackRenderState.FoilType foilType, Operation<Void> original) {
+    private void transparentplayer$fadeItem(PoseStack poseStack, ItemDisplayContext displayContext, int lightCoords, int overlayCoords, int outlineColor, int[] tintLayers, ItemQuads quads, ItemStackRenderState.FoilType foilType, Operation<Void> original) {
         if (PlayerOpacity.isFading()) {
             ItemFade.Faded faded = ItemFade.fade(tintLayers, quads);
             tintLayers = faded.tintLayers();
