@@ -30,9 +30,8 @@ code (config model, opacity logic) is kept identical between them so fixes can b
 ### Known limitations
 
 - The ground shadow under the player is not faded.
-- Glint and armor-trim overlays keep their own transparency and are not scaled by the opacity.
+- Enchantment glint and armor-trim overlays have not been checked.
 - The cape has not been checked in game (the development client has no cape skin).
-- The ground shadow under the player is not faded.
 
 ## Building (`main`)
 
