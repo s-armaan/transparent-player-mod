@@ -6,7 +6,10 @@
   "refmap": "transparentplayer.refmap.json",
   "mixins": [],
   "client": [
-    "MixinLivingEntityRenderer"
+    "MixinItemInHandRenderer",
+    "MixinLivingEntityRenderer",
+    "MixinRenderType",
+    "MixinSheets"
   ],
   "server": [],
   "injectors": {

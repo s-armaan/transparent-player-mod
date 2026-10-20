@@ -22,12 +22,14 @@ hand.
   | `enabled` | `true` | Master switch (also flipped by the keybind) |
   | `opacity` | `0.5` | `0.0` invisible to `1.0` opaque |
   | `applyToSelf` | `true` | Apply the effect to your own player |
+  | `applyToLayers` | `true` | Also fade armor, cape, elytra, held items and head items on the player model |
+  | `applyToFirstPerson` | `true` | Also fade the first-person arm and the item in it |
 
 ### Known limitations
 
-- Only the player body is made translucent. Armor, held items, the cape and other render layers are still opaque.
-- The first-person arm is not affected.
 - The ground shadow under the player is not faded.
+- Enchantment glint and armor-trim overlays have not been checked.
+- The cape has not been checked in game (the development client has no cape skin).
 
 ## Building
 

@@ -28,6 +28,10 @@ public class TransparentPlayerConfig {
     public float opacity = 0.5F;
     /** Apply the effect to the local player. */
     public boolean applyToSelf = true;
+    /** Also fade armor, cape, elytra and items held or worn by the player model. */
+    public boolean applyToLayers = true;
+    /** Also fade the first-person arm and the item held in it. */
+    public boolean applyToFirstPerson = true;
 
     public static TransparentPlayerConfig get() {
         return instance;
