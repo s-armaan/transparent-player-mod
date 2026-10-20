@@ -5,7 +5,10 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [],
   "client": [
-    "MixinLivingEntityRenderer"
+    "MixinItemInHandRenderer",
+    "MixinLivingEntityRenderer",
+    "MixinRenderTypes",
+    "MixinSubmitNodeCollection"
   ],
   "server": [],
   "injectors": {

@@ -7,7 +7,8 @@ keybind to toggle it.
 
 | Branch | Minecraft | Loaders | Java |
 |---|---|---|---|
-| `main` | 26.2 and 26.3 (same source compiles on both) | Fabric, NeoForge | 25 |
+| `main` | 26.2 | Fabric, NeoForge | 25 |
+| `26.3` | 26.3 | Fabric, NeoForge | 25 |
 | `1.20.1` | 1.20.1 | Forge | 17 |
 
 The two lines use different toolchains and renderer internals, so they are kept on separate branches. Loader-neutral
@@ -23,16 +24,18 @@ code (config model, opacity logic) is kept identical between them so fixes can b
   | `enabled` | `true` | Master switch (also flipped by the keybind) |
   | `opacity` | `0.5` | `0.0` invisible to `1.0` opaque |
   | `applyToSelf` | `true` | Apply the effect to your own player |
+  | `applyToLayers` | `true` | Also fade armor, cape, elytra and the shield on the player model |
+  | `applyToFirstPerson` | `true` | Also fade the first-person arm |
 
 ### Known limitations
 
-- Only the player body is made translucent. Armor, held items, the cape and other render layers are still opaque.
-- The first-person arm is not affected.
+- Items held in the hand or worn on the head (swords, blocks, skulls) are not faded yet.
+- The cape has not been checked in game (the development client has no cape skin).
 - The ground shadow under the player is not faded.
 
 ## Building (`main`)
 
-Requires JDK 25. Builds against 26.2 by default; see the comment in `gradle.properties` for the 26.3 values.
+Requires JDK 25.
 
 ```
 ./gradlew build
