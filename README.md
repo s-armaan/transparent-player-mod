@@ -24,12 +24,13 @@ code (config model, opacity logic) is kept identical between them so fixes can b
   | `enabled` | `true` | Master switch (also flipped by the keybind) |
   | `opacity` | `0.5` | `0.0` invisible to `1.0` opaque |
   | `applyToSelf` | `true` | Apply the effect to your own player |
-  | `applyToLayers` | `true` | Also fade armor, cape, elytra and the shield on the player model |
-  | `applyToFirstPerson` | `true` | Also fade the first-person arm |
+  | `applyToLayers` | `true` | Also fade armor, cape, elytra, held items and head items on the player model |
+  | `applyToFirstPerson` | `true` | Also fade the first-person arm and the item in it |
 
 ### Known limitations
 
-- Items held in the hand or worn on the head (swords, blocks, skulls) are not faded yet.
+- The ground shadow under the player is not faded.
+- Glint and armor-trim overlays keep their own transparency and are not scaled by the opacity.
 - The cape has not been checked in game (the development client has no cape skin).
 - The ground shadow under the player is not faded.
 

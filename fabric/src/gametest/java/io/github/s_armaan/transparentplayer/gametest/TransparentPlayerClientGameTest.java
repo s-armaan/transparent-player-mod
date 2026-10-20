@@ -30,6 +30,12 @@ public class TransparentPlayerClientGameTest implements FabricClientGameTest {
             world.getServer().runCommand("item replace entity @p armor.chest with minecraft:elytra");
             scene(context, "elytra", CameraType.THIRD_PERSON_BACK);
 
+            world.getServer().runCommand("item replace entity @p armor.chest with minecraft:air");
+            world.getServer().runCommand("item replace entity @p armor.legs with minecraft:air");
+            world.getServer().runCommand("item replace entity @p armor.feet with minecraft:air");
+            world.getServer().runCommand("item replace entity @p armor.head with minecraft:diamond_block");
+            scene(context, "head-block", CameraType.THIRD_PERSON_FRONT);
+
             scene(context, "first-person-item", CameraType.FIRST_PERSON);
 
             world.getServer().runCommand("item replace entity @p weapon.mainhand with minecraft:air");
